@@ -17,7 +17,7 @@ class QuestManager extends Pdo
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
-        $quests = $statement->fetchAll(\PDO::FETCH_CLASS, Quest::class);
-        return $quests[0];
+        $req = $statement->fetchAll(\PDO::FETCH_CLASS, Quest::class);
+        return $req [0];
     }
 }
